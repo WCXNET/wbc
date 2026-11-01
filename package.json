@@ -1,0 +1,36 @@
+{
+  "name": "wbc",
+  "version": "0.1.0",
+  "description": "WorkBuddy Compatibility patch for dsh-workbuddy-connect: stops the upstream HTTP 400 (code 11128, \"request blocked\") by demoting long system prompts to a user message.",
+  "type": "module",
+  "license": "MIT",
+  "engines": {
+    "node": ">=20.6.0"
+  },
+  "bin": {
+    "wbc": "src/cli.mjs"
+  },
+  "exports": {
+    ".": "./src/patch.mjs",
+    "./register": "./src/register.mjs",
+    "./body": "./src/body.mjs"
+  },
+  "files": [
+    "src",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "test": "node --test",
+    "check": "node src/cli.mjs check",
+    "apply": "node src/cli.mjs apply",
+    "revert": "node src/cli.mjs revert"
+  },
+  "keywords": [
+    "workbuddy",
+    "deepseek-harness",
+    "dsh",
+    "patch",
+    "11128"
+  ]
+}
